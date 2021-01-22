@@ -39,6 +39,7 @@ def auto_commit():
 # schedule
 schedule.every().day.at("12:00").do(auto_commit)
 schedule.every().day.at("17:00").do(auto_commit)
+schedule.every().day.at("21:55").do(auto_commit)
 schedule.every().day.at("23:00").do(auto_commit)
 
 # Main
