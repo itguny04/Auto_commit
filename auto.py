@@ -8,15 +8,14 @@ import winsound
 
     # init
 def git_init():
-    os.system("git init")
+
     print('git init')
-
-    os.system("git add -A")
+    os.system("git init")
     print("git add -A")
-
-    os.system("git commit -m 'init'")
+    os.system("git add -A")
     print("git commit -m 'init'")
-
+    os.system("git commit -m 'init'")
+    
     URL = input('URL: ')
     os.system(f"git remote add origin {URL}")
     os.system("git branch -M main")
@@ -30,13 +29,13 @@ def git_init():
 def auto_commit():
     this_tm = time.localtime(time.time())
 
-    os.system("git add -A")
     print("git add -A")
-    os.system(f"git commit -m '{this_tm.tm_year}-{this_tm.tm_mon}-{this_tm.tm_mday}-{this_tm.tm_hour}:{this_tm.tm_min}'")
+    os.system("git add -A")
     print(f"git commit -m '{this_tm.tm_year}-{this_tm.tm_mon}-{this_tm.tm_mday}-{this_tm.tm_hour}:{this_tm.tm_min}'")
-    os.system("git push")
+    os.system(f"git commit -m '{this_tm.tm_year}-{this_tm.tm_mon}-{this_tm.tm_mday}-{this_tm.tm_hour}:{this_tm.tm_min}'")
     print("git push")
-
+    os.system("git push")
+    
     winsound.Beep(200,100)
 
     return 
@@ -60,4 +59,5 @@ if __name__  == '__main__':
     while True:
         schedule.run_pending()
         time.sleep(1)
+
 
